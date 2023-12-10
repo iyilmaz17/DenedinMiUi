@@ -1,0 +1,51 @@
+<div class="header-bot">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Logo -->
+            <div class="col-md-3 logo_agile">
+                <img src="./assets/dm.jpg" alt=" " class="img-fluid" style="max-height: 100px;">
+            </div>
+            <!-- //Logo -->
+            
+            <!-- Search and Login/Register -->
+            <div class="col-md-9 header mt-4 mb-md-0 mb-4">
+                <div class="row align-items-center">
+                    <!-- Search -->
+                    <div class="col-md-8">
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Aradığınız ürünü yazın"
+                                aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Ara</button>
+                        </form>
+                    </div>
+  
+                    <!-- Login - Register -->
+                    <div class="col-md-4 text-end">
+                        <button routerLink="/login" type="button" class="btn btn-outline-primary me-2">Giriş</button>
+                        <button routerLink="/register" type="button" class="btn btn-warning">Kayıt Ol</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  <div class="navbar-inner mt-2">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+  
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto text-center mt-2 mt-lg-0">
+                    <!-- <li *ngFor="let category of categories" value="{{category.id}}" class="nav-item mb-lg-0 mb-2">
+                      <a routerLink="category-detail/{{category.id}}" class="nav-link text-dark fs-4 fw-bold"
+                      aria-current="page">{{category.categoryName}}</a>
+                    </li> -->
+                </ul>
+            </div>
+        </nav>
+    </div>
+  </div>
