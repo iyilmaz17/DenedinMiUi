@@ -3,16 +3,27 @@
   <button type="button" class="btn-close" (click)="closeModal()" aria-label="Close"></button>
 </div>
 <div class="modal-body">
-  <form>
-    <div class="form-group">
-      <label for="username">Kullanıcı Adı:</label>
-      <input type="text" class="form-control" id="username" (ngModel)="username" name="username" required>
+  <form [formGroup]="loginForm" class="row g-3 needs-validation">
+    <h1 class="h3 mb-3 fw-normal text-center">Giriş</h1>
+    <div class="form-floating">
+      <label for="email">Mail Adresiniz</label>
+      <input formControlName="email" type="email" class="form-control" id="email" placeholder="name@example.com">
+    </div>
+    <div class="form-floating">
+      <input formControlName="password" type="password" class="form-control" id="password" placeholder="Password">
+      <label for="password">Şifreniz</label>
     </div>
 
-    <div class="form-group">
-      <label for="password">Şifre:</label>
-      <input type="password" class="form-control" id="password" (ngModel)="password" name="password" required>
+    <div class="form-check text-start my-3">
+      <input formControlName="checkbox1" class="form-check-input" type="checkbox" value="remember-me" id="checkbox1">
+      <label class="form-check-label" for="checkbox1">
+        Beni Hatırla
+      </label>
     </div>
+    <button class="w-100 btn btn-lg btn-primary" (click)="login()">
+      Giriş yap
+    </button>
+    <p class="mt-5 mb-3 text-body-secondary">&copy; 2023</p>
   </form>
 </div>
 <div class="modal-footer">

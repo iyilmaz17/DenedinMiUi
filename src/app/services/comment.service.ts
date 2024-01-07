@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Comment } from '../models/comment';
 import { ResponseModel } from '../models/responseModel';
+import { SingleResponseModel } from '../models/singleResponseModel';
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +19,8 @@ export class CommentService {
   getComments():Observable<ListResponseModel<Comment>> {
     return this.httpClient.get<ListResponseModel<Comment>>(this.apiUrl);
   }
-  getByProductId(id:number):Observable<ListResponseModel<Comment>>{
-    let newPath = this.apiUrl +"https://localhost:7247/api/Comment/getbyproductid?id=" + id
-    return this.httpClient.get<ListResponseModel<Comment>>(newPath);
+  getByProductId(id:number):Observable<SingleResponseModel<Comment>>{
+    let newPath = "https://localhost:7247/api/Comment/getbyproductid?id=" + id
+    return this.httpClient.get<SingleResponseModel<Comment>>(newPath);
   }
 }

@@ -15,18 +15,12 @@ export class HomeComponent implements OnInit {
 
   categories : Category[]=[];
   products: Product[] = [];
-  comments: Comment[] = [];
-  comment: any;
+  comment: Comment;
   
   constructor(private categoryService:CategoryService,private productService:ProductService,private commentService:CommentService) { }
 
   ngOnInit(): void {
     this.getCategories();
-    
-    //this.getComment();
-    this.products.forEach(product => {
-      this.getComment(product.Id);
-    });
     this.getProducts();
   }
 
@@ -42,9 +36,9 @@ export class HomeComponent implements OnInit {
   }
   getComment(productId: number) {
     this.commentService.getByProductId(productId).subscribe(response => {
-      const comment = response.data[2];
-      console.log(comment);
-      this.comments.push(comment);
+      this.comment = response.data;
+      console.log(this.comment.commentDescription);
+      
     });
   }
 

@@ -5,4 +5,5 @@ export interface Comment {
     commentDescription: string;
     createdDate: Date;
     updatedDate?: Date;
+    productId: number;
   }
