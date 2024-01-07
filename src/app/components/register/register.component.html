@@ -1,0 +1,31 @@
+<div class="modal-header">
+    <h1 class="modal-title fs-5">Kullanıcı Kayıt Ol</h1>
+    <button type="button" class="btn-close" (click)="closeModal()" aria-label="Close"></button>
+  </div>
+  <div class="modal-body">
+    <form formGroup="registrationForm" (ngSubmit)="registerUser()">
+      <div class="mb-3">
+        <label for="username" class="form-label">Kullanıcı Adı:</label>
+        <input type="text" class="form-control" id="username" formControlName="username" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">E-posta:</label>
+        <input type="email" class="form-control" id="email" formControlName="email" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Şifre:</label>
+        <input type="password" class="form-control" id="password" formControlName="password" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="confirmPassword" class="form-label">Şifre Tekrar:</label>
+        <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword" required>
+      </div>
+
+      <div *ngIf="registrationForm.hasError('passwordMismatch')" class="text-danger">Şifreler eşleşmiyor!</div>
+
+      <button type="submit" class="btn btn-primary">Kayıt Ol</button>
+    </form>
+  </div>

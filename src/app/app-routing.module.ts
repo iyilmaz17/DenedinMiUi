@@ -4,11 +4,15 @@ import { NaviComponent } from './components/navi/navi.component';
 import { CategoryComponent } from './components/category/category.component';
 import { ProductComponent } from './components/product/product.component';
 import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
-  {path:"",pathMatch:"full", component:HomeComponent},
-  {path:"category", component:CategoryComponent},
-  {path:"product", component:ProductComponent},
+  { path: "", pathMatch: "full", component: HomeComponent },
+  { path: "category", component: CategoryComponent },
+  { path: "product", component: ProductComponent },
+  { path: "login", component: LoginComponent },
+  { path: "register", component: RegisterComponent }
 ];
 
 @NgModule({
