@@ -3,6 +3,7 @@ import { Category } from '../models/category';
 import { ListResponseModel } from '../models/listResponseModel';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Product } from '../models/product';
 
 @Injectable({
   providedIn: 'root'
@@ -16,4 +17,5 @@ export class CategoryService {
   getCategories():Observable<ListResponseModel<Category>> {
     return this.httpClient.get<ListResponseModel<Category>>(this.apiUrl);
   }
+  
 }

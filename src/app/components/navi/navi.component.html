@@ -13,7 +13,7 @@
                     <!-- Search -->
                     <div class="col-md-8">
                         <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Aradığınız ürünü yazın"
+                            <input [(ngModel)]="filterText" id="filterText" class="form-control me-2" type="text" placeholder="Aradığınız ürünü yazın"
                                 aria-label="Search">
                             <button class="btn btn-outline-success" type="submit">Ara</button>
                         </form>
@@ -29,24 +29,21 @@
         </div>
     </div>
   </div>
-  
-  <div class="navbar-inner mt-2">
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-white bg-white">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-  
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto text-center mt-2 mt-lg-0">
-                    <!-- <li *ngFor="let category of categories" value="{{category.id}}" class="nav-item mb-lg-0 mb-2">
-                      <a routerLink="category-detail/{{category.id}}" class="nav-link text-dark fs-4 fw-bold"
-                      aria-current="page">{{category.categoryName}}</a>
-                    </li> -->
-                </ul>
-            </div>
-        </nav>
-    </div>
-  </div>
-  
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-white bg-white">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto text-center mt-2 mt-lg-0">
+                <li *ngFor="let category of categories" value="{{category.id}}" class="nav-item mb-lg-0 mb-2">
+                  <a routerLink="category-detail/{{category.id}}" class="nav-link text-dark fs-5 fw-bold"
+                  aria-current="page">{{category.name}}</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+    

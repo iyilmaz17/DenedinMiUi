@@ -5,6 +5,7 @@ import { Comment } from 'src/app/models/comment';
 import { CategoryService } from 'src/app/services/category.service';
 import { CommentService } from 'src/app/services/comment.service';
 import { ProductService } from 'src/app/services/product.service';
+import { Home } from 'src/app/models/home';
 
 @Component({
   selector: 'app-home',
@@ -16,22 +17,26 @@ export class HomeComponent implements OnInit {
   categories : Category[]=[];
   products: Product[] = [];
   comment: Comment;
+  homeProduct:Home[]=[];
   
   constructor(private categoryService:CategoryService,private productService:ProductService,private commentService:CommentService) { }
 
   ngOnInit(): void {
     this.getCategories();
-    this.getProducts();
+    this.getHomeProducts();
   }
 
   getCategories() {
     this.categoryService.getCategories().subscribe(response=>{
       this.categories = response.data
+      console.log(this.categories)
     })   
   }
-  getProducts() {
-    this.productService.getProducts().subscribe(response=>{
-      this.products = response.data
+  getHomeProducts() {
+    this.productService.getHomeProducts().subscribe(response=>{
+      
+      this.homeProduct = response.data
+      console.log(this.homeProduct)
     })   
   }
   getComment(productId: number) {

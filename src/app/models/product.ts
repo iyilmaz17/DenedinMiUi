@@ -4,5 +4,6 @@ export interface Product{
     minPrice:number; 
     maxPrice:number; 
     description:string;
-    addedDate:Date
+    addedDate:Date;
+    categoryId:number;
 }

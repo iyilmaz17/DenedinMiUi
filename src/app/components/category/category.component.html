@@ -8,8 +8,8 @@
   
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto text-center mt-2 mt-lg-0">
-                    <li *ngFor="let category of categories" value="{{category.Id}}" class="nav-item mb-lg-0 mb-2">
-                      <a class="nav-link text-dark fs-6 fw-bold"  routerLink = "/products/category/{{category.Id}}"
+                    <li *ngFor="let category of categories" value="{{category.id}}" class="nav-item mb-lg-0 mb-2">
+                      <a class="nav-link text-dark fs-6 fw-bold"  routerLink = "/products/category/{{category.id}}"
                       aria-current="page">{{category.name}}</a>
                     </li>
                 </ul>

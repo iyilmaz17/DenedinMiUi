@@ -13,6 +13,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { FilterPipe } from './pipes/filter.pipe';
+import { CategoryDetailComponent } from './components/category-detail/category-detail.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { ToastrModule } from 'ngx-toastr';
     HomeComponent,
     DateFormatPipe,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    FilterPipe,
+    CategoryDetailComponent
   ],
   imports: [
     BrowserModule,
