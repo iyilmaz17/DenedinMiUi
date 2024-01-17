@@ -20,7 +20,6 @@ export class ProductComponent implements OnInit {
   getProducts() {
     this.productService.getProducts().subscribe(response=>{
       this.products = response.data
-      console.log(this.products)
     })   
   }
   formatAddedDate(addedDate: string): string {

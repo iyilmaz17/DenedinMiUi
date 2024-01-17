@@ -39,7 +39,13 @@ export class LoginComponent implements OnInit {
   closeModal() {
     this.activeModal.dismiss();
   }
-
+  isAuthenticated(){
+    let test = this.authService.isAuthenticated()
+    return test
+  }
+  logOut(){
+    this.authService.logout()
+  }
   login() {
     if (this.loginForm.valid) {
       let loginModel = Object.assign({}, this.loginForm.value);
@@ -48,6 +54,8 @@ export class LoginComponent implements OnInit {
           if (this.loginForm.value.checkbox1 == true) {
             localStorage.setItem("token", response.data.token);
             this.userInfo = this.authService.loginUserInfo(response.data.token)
+            let test = this.authService.isAuthenticated()
+            this.closeModal()
             this.toastrService.info(this.userInfo.name, 'Hoşgeldiniz Sn.')
           }
         },

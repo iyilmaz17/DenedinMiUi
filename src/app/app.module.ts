@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { FilterPipe } from './pipes/filter.pipe';
 import { CategoryDetailComponent } from './components/category-detail/category-detail.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CategoryDetailComponent } from './components/category-detail/category-d
     LoginComponent,
     RegisterComponent,
     FilterPipe,
-    CategoryDetailComponent
+    CategoryDetailComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,

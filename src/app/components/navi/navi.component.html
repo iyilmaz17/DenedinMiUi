@@ -18,12 +18,27 @@
                             <button class="btn btn-outline-success" type="submit">Ara</button>
                         </form>
                     </div>
-  
-                    <!-- Login - Register -->
                     <div class="col-md-4 text-end">
+                        <!-- Kullanıcı giriş yapmışsa -->
+                        <div *ngIf="isAuthenticated(); else notAuthenticated">
+                            <button (click)="openLoginModal()" type="button" class="btn btn-outline-primary me-2">Hesabım</button>
+                          <button (click)="logOut()" type="button" class="btn btn-danger">Çıkış yap</button>
+                        </div>
+                      
+                        <!-- Kullanıcı giriş yapmamışsa -->
+                        <ng-template #notAuthenticated>
+                          <button (click)="openLoginModal()" type="button" class="btn btn-outline-primary me-2">Giriş</button>
+                          <button (click)="openRegistrationModal()" type="button" class="btn btn-warning">Kayıt Ol</button>
+                        </ng-template>
+                      </div>
+                      
+                    <!-- Login - Register -->
+                    <!-- <div class="col-md-4 text-end">
                         <button (click)="openLoginModal()" type="button" class="btn btn-outline-primary me-2">Giriş</button>
                         <button (click)="openRegistrationModal()" type="button" class="btn btn-warning">Kayıt Ol</button>
-                    </div>
+                        <p>Hoşgeldiniz</p>
+                        <button type="button" class="btn btn-warning">Çıkış yap</button>
+                    </div> -->
                 </div>
             </div>
         </div>

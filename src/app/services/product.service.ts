@@ -5,6 +5,7 @@ import { ListResponseModel } from '../models/listResponseModel';
 import { Observable } from 'rxjs';
 import { ResponseModel } from '../models/responseModel';
 import { Home } from '../models/home';
+import { SingleResponseModel } from '../models/singleResponseModel';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,10 @@ export class ProductService {
   getAllByCategoryId(categoryId:number):Observable<ListResponseModel<Home>>{
     let newPath = this.apiUrl + "Product/getallhomecategoryproduct?categoryId=" + categoryId
     return this.httpClient.get<ListResponseModel<Home>>(newPath)
+  }
+  getById(productId:number):Observable<SingleResponseModel<Product>>{
+    let newPath = this.apiUrl + "Product/getbyid?productId=" + productId
+    return this.httpClient.get<SingleResponseModel<Product>>(newPath)
   }
 
 }

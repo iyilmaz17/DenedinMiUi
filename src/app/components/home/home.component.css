@@ -56,3 +56,13 @@ body {
 }
 
 /* ... (rest of your CSS code) */
+.row-9 {
+  max-width: 1200px; /* veya istediğiniz bir genişlik değeri */
+  margin: 0 auto; /* Sayfanın ortasına hizalama */
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}

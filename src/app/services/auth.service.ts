@@ -15,15 +15,18 @@ export class AuthService {
   constructor(private httpClient: HttpClient) { 
     
   }
-  login(registerModel: RegisterModel) {
+  register(registerModel: RegisterModel) {
     return this.httpClient.post<SingleResponseModel<TokenModel>>(this.apiUrl + "register", registerModel)
   }
-  register(loginModel: LoginModel) {
+  login(loginModel: LoginModel) {
     return this.httpClient.post<SingleResponseModel<TokenModel>>(this.apiUrl + "login", loginModel)
   }
   loginUserInfo(token: string): UserTokenModel {
     this.userRole = JSON.parse(atob(token.split('.')[1])) as UserTokenModel
     return this.userRole
+  }
+  logout() {
+    localStorage.removeItem('token');
   }
   isAuthenticated() {
     if (localStorage.getItem("token")) {
