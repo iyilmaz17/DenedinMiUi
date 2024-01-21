@@ -32,14 +32,20 @@ export class HomeComponent implements OnInit {
   products: Product[] = [];
   comment: Commentt;
   homeProduct:Home[]=[];
+  maxProductId:number;
   
   constructor(private modalService: NgbModal,private categoryService:CategoryService,private productService:ProductService,private commentService:CommentService) { }
 
   ngOnInit(): void {
+    this.getProductMaxComment();
     this.getCategories();
     this.getHomeProducts();
   }
-
+  getProductMaxComment(){
+    this.commentService.getProductMaxComment().subscribe(response=>{
+      this.maxProductId =response.data.productId
+    })
+  }
   getCategories() {
     this.categoryService.getCategories().subscribe(response=>{
       this.categories = response.data

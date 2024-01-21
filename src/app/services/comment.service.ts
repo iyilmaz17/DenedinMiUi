@@ -39,4 +39,8 @@ export class CommentService {
     let newPath = "https://localhost:7247/api/Comment/getcommentdetailbyproductid?productId=" + productId
     return this.httpClient.get<SingleResponseModel<CommentAVG>>(newPath);
   }
+  getProductMaxComment():Observable<SingleResponseModel<CommentAVG>>{
+    let newPath = "https://localhost:7247/api/Comment/GetCommentDetailByProductIdWithMaxUserCount"
+    return this.httpClient.get<SingleResponseModel<CommentAVG>>(newPath);
+  }
 }
