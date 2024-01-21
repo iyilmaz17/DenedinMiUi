@@ -1,13 +1,14 @@
 <div class="modal-header">
-  <h1 class="modal-title fs-5">DenedinMi</h1>
+  <h1 class="modal-title fs-5">DenedinMi?</h1>
   <button type="button" class="btn-close" (click)="closeModal()" aria-label="Close"></button>
 </div>
 <div class="modal-body">
   <form [formGroup]="loginForm" class="row g-3 needs-validation">
     <h1 class="h3 mb-3 fw-normal text-center">Giriş</h1>
     <div class="form-floating">
-      <label for="email">Mail Adresiniz</label>
+      
       <input formControlName="email" type="email" class="form-control" id="email" placeholder="name@example.com">
+      <label for="email">Mail Adresiniz</label>
     </div>
     <div class="form-floating">
       <input formControlName="password" type="password" class="form-control" id="password" placeholder="Password">

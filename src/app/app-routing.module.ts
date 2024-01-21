@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: "register", component: RegisterComponent },
   //{ path: 'category-detail', component: CategoryDetailComponent }
   { path: 'category-detail/:id', component: CategoryDetailComponent },
-  { path: 'a', component: ProductDetailComponent }
+  { path: 'a', component: ProductDetailComponent },
 ];
 
 @NgModule({

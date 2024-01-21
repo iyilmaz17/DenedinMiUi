@@ -67,7 +67,41 @@
     font-size: 18px;
     margin-bottom: 2px;
 }
+
 .rating {
     display: flex;
     flex-direction: column;
 }
+
+.star-rating {
+    font-size: 2em;
+    color: #ffc107;
+}
+
+.custom-rating {
+    font-size: 48px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.frame {
+    border: 1px solid white;
+    padding: 15px;
+    /* İçeriği çerçeveden ayırmak için opsiyonel */
+    border-radius: 5px;
+    /* Opsiyonel: Köşeleri yuvarlamak için */
+}
+/* star-rating.component.css */
+.star-rating {
+    font-size: 24px;
+    color: #fbc634; /* Dolu yıldız rengi */
+  }
+  .custom-progress {
+    width: 300px; /* 200px genişlik */
+    margin-left: auto; /* En sağa yasla */
+}
+.left-border {
+    border-left: 2px solid #000; /* İstenen sol kenarlık kalınlığı ve rengi */
+    padding-left: 10px; /* Opsiyonel: İçerik ile kenarlık arasına boşluk bırakmak için */
+}
+

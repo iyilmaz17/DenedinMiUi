@@ -16,6 +16,9 @@ import { ToastrModule } from 'ngx-toastr';
 import { FilterPipe } from './pipes/filter.pipe';
 import { CategoryDetailComponent } from './components/category-detail/category-detail.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { CommonModule, DatePipe } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
     RegisterComponent,
     FilterPipe,
     CategoryDetailComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -39,8 +43,12 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
     FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
+    CommonModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    DatePipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

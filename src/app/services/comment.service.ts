@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Commentt } from '../models/comment';
 import { ResponseModel } from '../models/responseModel';
 import { SingleResponseModel } from '../models/singleResponseModel';
+import { CommentAVG } from '../models/commentAVG';
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +31,12 @@ export class CommentService {
   getAllCommentByProductId(id:number):Observable<ListResponseModel<Commentt>>{
     let newPath = "https://localhost:7247/api/Comment/getallbyproductid?id=" + id
     return this.httpClient.get<ListResponseModel<Commentt>>(newPath);
+  }
+  add(comment:Commentt):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>("https://localhost:7247/api/Comment/add",comment)
+  }
+  getCommentDetailByProductId(productId:number):Observable<SingleResponseModel<CommentAVG>>{
+    let newPath = "https://localhost:7247/api/Comment/getcommentdetailbyproductid?productId=" + productId
+    return this.httpClient.get<SingleResponseModel<CommentAVG>>(newPath);
   }
 }
